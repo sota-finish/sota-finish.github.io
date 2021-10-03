@@ -56,7 +56,7 @@
 		#title2 {
 			margin-top: 5vh;
 		}
-		a {
+		.link {
 			text-decoration: none;
 			color: black;
 			font-size: 1.5vw;
@@ -64,7 +64,7 @@
 			padding: 5px;
 			margin: 5px;
 		}
-		a:hover {
+		.link:hover {
 			animation-name: link;
 			animation-iteration-count: 1;
 			animation-duration: 1s;
@@ -109,6 +109,13 @@
 			animation-name: bottom-click;
 			animation-duration: 2s;
 			animation-iteration-count: 1;
+		}
+		.name {
+			text-decoration: none;
+			color: black;
+		}
+		.name:hover {
+			color: #757575;
 		}
 		@keyframes bottom-click {
 			0% {
@@ -174,15 +181,15 @@
 		<div class="spin" id="right"></div>
 	</div>
 	<div id="all">
-		<a id="icon" href="https://sota-finish.github.io"><img src="img/icon.png" width="50px" height="50px"></a>
+		<a id="icon" href="https://sota-finish.github.io" class="link"><img src="img/icon.png" width="50px" height="50px"></a>
 		<div id="1">
 			<h1 class="title" id="title">Sota finish</h1>
 			<ul id="links">
-				<a href="https://discord.com/invite/V52F4hZ7AC">Discord</a>
-				<a href="https://www.youtube.com/channel/UC4Jir_0n5UNlaqFMobr80eg/featured">Youtube</a>
-				<a href="https://twitter.com/watt41409816">Twitter</a>
-				<a href="https://sota-finish.github.io/ranked">Ranked Rules</a>
-				<a href="https://sota-finish.github.io/ninki">人気投票</a>
+				<a href="https://discord.com/invite/V52F4hZ7AC" class="link">Discord</a>
+				<a href="https://www.youtube.com/channel/UC4Jir_0n5UNlaqFMobr80eg/featured" class="link">Youtube</a>
+				<a href="https://twitter.com/watt41409816" class="link">Twitter</a>
+				<a href="https://sota-finish.github.io/ranked" class="link">Ranked Rules</a>
+				<a href="https://sota-finish.github.io/ninki" class="link">人気投票</a>
 			</ul>
 			<input type="checkbox" id="check_input" style="display: none;">
 			<label id="bottom" for="check_input">\/</label>
@@ -194,7 +201,12 @@
 			<br>
 			<h1 class="title" id="title2">About</h1>
 			<br>
-			<h1>主 Watt</h2>
+			<div id="name">
+				<a href="" class="name"><h1>破壊神 Watt</h1></a>
+				<a href="" class="name"><h1>創造神 まっちゃ</h1></a>
+				<a href="" class="name"><h1>ねむねむ setuna</h1></a>
+				<a href="" class="name"><h1>WEB人 onudon</h1></a>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -225,10 +237,10 @@
 			console.log("test")
 			if(window.innerHeight > window.innerWidth) {
 				$('.title').css('font-size','3vh')
-				$('a').css('font-size','1.5vh')
+				$('.link').css('font-size','1.5vh')
 			}else {
 				$('.title').css('font-size','3vw')
-				$('a').css('font-size','1.5vw')
+				$('.link').css('font-size','1.5vw')
 			}
 		}
 	</script>
