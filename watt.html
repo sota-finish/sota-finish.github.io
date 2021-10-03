@@ -23,6 +23,18 @@
 			animation-duration: 5s;
 			animation-iteration-count: infinite;
 		}
+		#title {
+			font-family: 'Orbitron', sans-serif;
+			margin-top: 22vh;
+			margin-left: 3vw;
+			font-size: 3vw;
+		}
+		#icon {
+			position: absolute;
+			top: 1vw;
+			left: 1vw;
+			z-index: 100;
+		}
 		#anime {
 			background-color: #fff;
 			width: 100%;
@@ -45,109 +57,6 @@
 		}
 		#right {
 			animation-name: spiner-right;
-		}
-		.title {
-			font-size: 3vw;
-		}
-		#title {
-			margin-left: 3vw;
-			margin-top: 22vh;
-		}
-		#title2 {
-			margin-top: 5vh;
-		}
-		.link {
-			text-decoration: none;
-			color: black;
-			font-size: 1.5vw;
-			border: 1.7px solid #000;
-			padding: 5px;
-			margin: 5px;
-		}
-		.link:hover {
-			animation-name: link;
-			animation-iteration-count: 1;
-			animation-duration: 1s;
-		}
-		#icon {
-			position: absolute;
-			top: 1vw;
-			left: 1vw;
-			z-index: 100;
-		}
-		#bottom {
-			font-size: 30px;
-			position: absolute;
-			top: 50vh;
-			left: calc(50vw - 30px);
-			border: 1.2px solid black;
-			border-radius: 50%;
-			padding: 5px 10px;
-			cursor: pointer;
-		}
-		#bottom2 {
-			font-size: 30px;
-			position: absolute;
-			bottom: 10vh;
-			left: calc(50vw - 30px);
-			border: 1.2px solid black;
-			border-radius: 50%;
-			padding: 5px 10px;
-			cursor: pointer;
-		}
-		#bottom:hover {
-			animation-name: bottom;
-			animation-duration: 0.2s;
-			animation-iteration-count: 1;
-		}
-		#bottom2:hover {
-			animation-name: bottom;
-			animation-duration: 0.2s;
-			animation-iteration-count: 1;
-		}
-		#check_input:checked ~ #bottom{
-			animation-name: bottom-click;
-			animation-duration: 2s;
-			animation-iteration-count: 1;
-		}
-		.name {
-			text-decoration: none;
-			color: black;
-		}
-		.name:hover {
-			color: #757575;
-		}
-		@keyframes bottom-click {
-			0% {
-				transform: rotate(0deg);
-				top: 50vh;
-			}
-			70% {
-				transform: rotate(180deg);
-				top: 50vh;
-			}
-			100% {
-				transform: rotate(180deg);
-				top: -10vh;
-			}
-		}
-		@keyframes bottom {
-			to {
-				padding: 7px 12px;
-			}
-			from {
-				padding: 5px 10px;
-			}
-		} 
-		@keyframes link{
-			to {
-				background-color: #fff;
-				padding: 5px;
-			}
-			from {
-				background-color: #757575;
-				padding: 12px;
-			}
 		}
 		@keyframes spiner-left{
 			0% {
@@ -176,38 +85,13 @@
 	</style>
 </head>
 <body>
-	<div id="anime">
-		<div class="spin" id="left"></div>
-		<div class="spin" id="right"></div>
-	</div>
 	<div id="all">
-		<a id="icon" href="https://sota-finish.github.io" class="link"><img src="img/icon.png" width="50px" height="50px"></a>
-		<div id="1">
-			<h1 class="title" id="title">Sota finish</h1>
-			<ul id="links">
-				<a href="https://discord.com/invite/V52F4hZ7AC" class="link">Discord</a>
-				<a href="https://www.youtube.com/channel/UC4Jir_0n5UNlaqFMobr80eg/featured" class="link">Youtube</a>
-				<a href="https://twitter.com/watt41409816" class="link">Twitter</a>
-				<a href="https://sota-finish.github.io/ranked" class="link">Ranked Rules</a>
-				<a href="https://sota-finish.github.io/ninki" class="link">人気投票</a>
-			</ul>
-			<input type="checkbox" id="check_input" style="display: none;">
-			<label id="bottom" for="check_input">\/</label>
+		<div id="anime">
+			<div class="spin" id="left"></div>
+			<div class="spin" id="right"></div>
 		</div>
-		<div id="2">
-			<input type="checkbox" id="check_input2" style="display: none;">
-			<label id="bottom2" for="check_input2">/\</label>
-			<br>
-			<br>
-			<h1 class="title" id="title2">About</h1>
-			<br>
-			<div id="name">
-				<a href="/watt" class="name"><h1>社長 Watt</h1></a>
-				<a href="" class="name"><h1>近所のおっちゃん まっちゃ</h1></a>
-				<a href="" class="name"><h1>ねむねむ setuna</h1></a>
-				<a href="" class="name"><h1>WEB人 onudon</h1></a>
-			</div>
-		</div>
+		<a id="icon" href="https://sota-finish.github.io"><img src="img/icon.png" width="50px" height="50px"></a>
+		<h1 id="title">Watt 社長</h1>
 	</div>
 	<script type="text/javascript">
 		$('#all').hide();
@@ -218,29 +102,16 @@
 		function start() {
 			$('#anime').hide();
 			$('#all').show();
-			$('#2').hide();
-		}
-		$('#bottom').click(function() {
-			setTimeout(switc,2000)
-		})
-		$('#bottom2').click(function() {
-			$('#1').show();
-			$('#2').hide();
-		})
-		function switc() {
-			$('#1').hide();
-			$('#2').show();
-			document.querySelector(`input[type='checkbox'][id='check_input']`).checked = false;
 		}
 		function windowsize() {
 			var n = window.innerHeight / 10;
 			console.log("test")
 			if(window.innerHeight > window.innerWidth) {
-				$('.title').css('font-size','3vh')
-				$('.link').css('font-size','1.5vh')
+				$('#title').css('font-size','3vh')
+				$('a').css('font-size','1.5vh')
 			}else {
-				$('.title').css('font-size','3vw')
-				$('.link').css('font-size','1.5vw')
+				$('#title').css('font-size','3vw')
+				$('a').css('font-size','1.5vw')
 			}
 		}
 	</script>
