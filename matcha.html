@@ -72,6 +72,9 @@
 			animation-iteration-count: 1;
 			animation-duration: 1s;
 		}
+		#use {
+			font-size: 2vw;
+		}
 		@keyframes link{
 			to {
 				background-color: #fff;
@@ -119,7 +122,10 @@
 		<ul id="links">
 			<a href="https://discord.com/invite/V52F4hZ7AC" class="link">Discord</a>
 		</ul>
-		<div id="use">Mouse:Gpro super right</div>
+		<div id="use">
+			<p>Mouse:Gpro super right</p>
+			<p>keyboard:Razer Blackwidow JP</p>
+		</div>
 	</div>
 	<script type="text/javascript">
 		$('#all').hide();
@@ -137,9 +143,11 @@
 			if(window.innerHeight > window.innerWidth) {
 				$('#title').css('font-size','3vh')
 				$('a').css('font-size','1.5vh')
+				$('#use').css('font-size','3vw')
 			}else {
 				$('#title').css('font-size','3vw')
 				$('a').css('font-size','1.5vw')
+				$('#use').css('font-size','3vh')
 			}
 		}
 	</script>
