@@ -14,13 +14,25 @@
 	<style type="text/css">
 	@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 		body {
 			margin: 0;
-			font-family: 'Orbitron', sans-serif;
+			overflow: hidden;
 			text-align: center;
 			animation-name: body;
 			animation-duration: 5s;
 			animation-iteration-count: infinite;
+		}
+		#title {
+			font-family: 'Noto Sans JP', sans-serif;
+			margin-top: 22vh;
+			font-size: 3vw;
+		}
+		#icon {
+			position: absolute;
+			top: 1vw;
+			left: 1vw;
+			z-index: 100;
 		}
 		#anime {
 			background-color: #fff;
@@ -45,16 +57,6 @@
 		#right {
 			animation-name: spiner-right;
 		}
-		.title {
-			font-size: 3vw;
-		}
-		#title {
-			margin-left: 3vw;
-			margin-top: 22vh;
-		}
-		#title2 {
-			margin-top: 5vh;
-		}
 		.link {
 			text-decoration: none;
 			color: black;
@@ -68,76 +70,28 @@
 			animation-iteration-count: 1;
 			animation-duration: 1s;
 		}
-		#icon {
-			position: absolute;
-			top: 1vw;
-			left: 1vw;
-			z-index: 100;
+		#use {
+			font-size: 2vw;
 		}
-		#bottom {
-			font-size: 30px;
-			position: absolute;
-			top: 50vh;
-			left: calc(50vw - 30px);
-			border: 1.2px solid black;
-			border-radius: 50%;
-			padding: 5px 10px;
-			cursor: pointer;
+		input {
+			border: none;
+			background-color: #fafafa;
 		}
-		#bottom2 {
-			font-size: 30px;
-			position: absolute;
-			bottom: 10vh;
-			left: calc(50vw - 30px);
-			border: 1.2px solid black;
-			border-radius: 50%;
-			padding: 5px 10px;
-			cursor: pointer;
+		textarea {
+			border: none;
+			background-color: #fafafa;
+			resize: none;
+			width: 15vw;
+			height: 5vh;
 		}
-		#bottom:hover {
-			animation-name: bottom;
-			animation-duration: 0.2s;
-			animation-iteration-count: 1;
+		button {
+			border: none;
+			background-color: #fff;
+			font-size: 20px;
 		}
-		#bottom2:hover {
-			animation-name: bottom;
-			animation-duration: 0.2s;
-			animation-iteration-count: 1;
+		button:hover {
+			border-bottom: solid 3px #000;
 		}
-		#check_input:checked ~ #bottom{
-			animation-name: bottom-click;
-			animation-duration: 2s;
-			animation-iteration-count: 1;
-		}
-		.name {
-			text-decoration: none;
-			color: black;
-		}
-		.name:hover {
-			color: #757575;
-		}
-		@keyframes bottom-click {
-			0% {
-				transform: rotate(0deg);
-				top: 50vh;
-			}
-			70% {
-				transform: rotate(180deg);
-				top: 50vh;
-			}
-			100% {
-				transform: rotate(180deg);
-				top: -10vh;
-			}
-		}
-		@keyframes bottom {
-			to {
-				padding: 7px 12px;
-			}
-			from {
-				padding: 5px 10px;
-			}
-		} 
 		@keyframes link{
 			to {
 				background-color: #fff;
@@ -180,36 +134,15 @@
 		<div class="spin" id="right"></div>
 	</div>
 	<div id="all">
-		<a id="icon" href="https://sota-finish.github.io" class="link"><img src="img/icon.png" width="50px" height="50px"></a>
-		<div id="1">
-			<h1 class="title" id="title">Sota finish</h1>
-			<ul id="links">
-				<a href="https://discord.com/invite/V52F4hZ7AC" class="link">Discord</a>
-				<a href="https://www.youtube.com/channel/UC4Jir_0n5UNlaqFMobr80eg/featured" class="link">Youtube</a>
-				<a href="https://twitter.com/watt41409816" class="link">Twitter</a>
-				<br>
-				<br>
-				<a href="https://sota-finish.github.io/otayori" class="link">お便り</a>
-				<a href="https://sota-finish.github.io/ranked" class="link">Ranked Rules</a>
-				<a href="https://sota-finish.github.io/ninki" class="link">人気投票</a>
-			</ul>
-			<input type="checkbox" id="check_input" style="display: none;">
-			<label id="bottom" for="check_input">\/</label>
-		</div>
-		<div id="2">
-			<input type="checkbox" id="check_input2" style="display: none;">
-			<label id="bottom2" for="check_input2">/\</label>
+		<h1 id="title">お便り</h1>
+		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSferx8YMMSMV1E2kGfiPc2TArDx7DdhGksv3x13IVNAak_q6A/formResponse">
+			<input placeholder="名前" name="entry.1786198879">
 			<br>
 			<br>
-			<h1 class="title" id="title2">About</h1>
+			<textarea placeholder="内容" name="entry.1163814976"></textarea>
 			<br>
-			<div id="name">
-				<a href="/watt" class="name"><h1>社長 Watt</h1></a>
-				<a href="/matcha" class="name"><h1>近所のおっちゃん まっちゃ</h1></a>
-				<a href="" class="name"><h1>ねむねむ setuna</h1></a>
-				<a href="" class="name"><h1>WEB人 onudon</h1></a>
-			</div>
-		</div>
+			<button type="submit" name="button" value="送信">送信</button>
+		</form>
 	</div>
 	<script type="text/javascript">
 		$('#all').hide();
@@ -220,29 +153,18 @@
 		function start() {
 			$('#anime').hide();
 			$('#all').show();
-			$('#2').hide();
-		}
-		$('#bottom').click(function() {
-			setTimeout(switc,2000)
-		})
-		$('#bottom2').click(function() {
-			$('#1').show();
-			$('#2').hide();
-		})
-		function switc() {
-			$('#1').hide();
-			$('#2').show();
-			document.querySelector(`input[type='checkbox'][id='check_input']`).checked = false;
 		}
 		function windowsize() {
 			var n = window.innerHeight / 10;
 			console.log("test")
 			if(window.innerHeight > window.innerWidth) {
-				$('.title').css('font-size','3vh')
-				$('.link').css('font-size','1.5vh')
+				$('#title').css('font-size','3vh')
+				$('a').css('font-size','1.5vh')
+				$('#use').css('font-size','3vw')
 			}else {
-				$('.title').css('font-size','3vw')
-				$('.link').css('font-size','1.5vw')
+				$('#title').css('font-size','3vw')
+				$('a').css('font-size','1.5vw')
+				$('#use').css('font-size','3vh')
 			}
 		}
 	</script>
